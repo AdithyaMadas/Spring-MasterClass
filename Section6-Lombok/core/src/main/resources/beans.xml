@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context = "http://www.springframework.org/schema/context"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
+<!--default-init-method="reset" default-destroy-method="cleanUp">-->
+
+    <context:component-scan base-package="com.madas"/>
+
+
+<!--    We dont need the bwlow line as component scan looks for @Component and also imports the below packages-->
+<!--    <context:annotation-config/>-->
+
+<!--    No need to define beans anymore, after component scan is defined-->
+<!--    <bean id="numberGenerator" class="com.madas.NumberGeneratorImpl"/>-->
+
+<!--    No need to define beans anymore, after component scan is defined-->
+    <!--    <bean id="gameImpl" class="com.madas.GameImpl" init-method="reset" destroy-method="cleanUp">-->
+<!--    <bean id="gameImpl" class="com.madas.GameImpl" init-method="reset">-->
+<!--        <constructor-arg ref="numberGenerator"/>-->
+<!--        <property name="numberGenerator" ref="numberGenerator"/>-->
+<!--    </bean>-->
+
+<!--    We dont need to below line, because it only imports PreDestroy, PostConstruct annotations, which are also imported by context-annotations-->
+<!--    <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>-->
+
+
+</beans>
