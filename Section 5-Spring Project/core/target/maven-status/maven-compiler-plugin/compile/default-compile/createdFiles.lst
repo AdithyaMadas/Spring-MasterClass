@@ -1,10 +1,5 @@
 com\madas\NumberGeneratorImpl.class
-com\madas\GuessCount.class
 com\madas\NumberGenerator.class
-com\madas\GameImpl.class
-com\madas\MessageGeneratorImpl.class
-com\madas\config\GameConfig.class
+com\madas\Test.class
 com\madas\Game.class
-com\madas\MinNumber.class
-com\madas\MessageGenerator.class
-com\madas\MaxNumber.class
+com\madas\GameImpl.class

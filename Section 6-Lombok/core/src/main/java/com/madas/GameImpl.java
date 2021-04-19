@@ -1,22 +1,24 @@
 package com.madas;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.AccessLevel;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
+@Slf4j
+@Getter
 @Component
 public class GameImpl implements Game {
 
-    private static final Logger log = LoggerFactory.getLogger(GameImpl.class);
-
+    @Getter(AccessLevel.NONE)
     private final NumberGenerator numberGenerator;
 
-//    @Value("${game.maxGuesses}")
+    //    @Value("${game.maxGuesses}")
     private final int guessCount;
 
     @Autowired
@@ -25,14 +27,14 @@ public class GameImpl implements Game {
         this.guessCount = guessCount;
     }
 
-    int guess;
     int number;
     int smallest;
     int biggest;
     int remainingGuesses;
     boolean validNumberRange;
 
-
+    @Setter
+    int guess;
 
     @PostConstruct
     @Override
@@ -65,43 +67,6 @@ public class GameImpl implements Game {
     }
 
     @Override
-    public int getNumber() {
-        return number;
-    }
-
-    @Override
-    public int getGuess() {
-        return guess;
-    }
-
-    @Override
-    public void setGuess(int guess) {
-        this.guess = guess;
-    }
-
-    @Override
-    public int getSmallest() {
-        return smallest;
-    }
-
-    @Override
-    public int getBiggest() {
-        return biggest;
-    }
-
-    @Override
-    public int getRemainingGuesses() {
-        return remainingGuesses;
-    }
-
-
-
-    @Override
-    public boolean isValidNumberRange() {
-        return validNumberRange;
-    }
-
-    @Override
     public boolean isGameWon() {
         return guess == number;
     }
@@ -111,11 +76,10 @@ public class GameImpl implements Game {
         return !isGameWon() && remainingGuesses <= 0;
     }
 
-    /*public GameImpl(NumberGenerator numberGenerator) {
-        this.numberGenerator = numberGenerator;
-    }*/
 
     private void checkValidNumberRange() {
         validNumberRange = guess <= biggest && guess >= smallest;
     }
 }
+
+

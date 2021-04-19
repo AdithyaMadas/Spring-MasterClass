@@ -1,18 +1,18 @@
 package com.madas;
 
 import com.madas.config.GameConfig;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+@Slf4j
 public class Test {
-    private static final Logger logger = LoggerFactory.getLogger(Test.class);
+//    private static final Logger logger = LoggerFactory.getLogger(Test.class);
 
 //    private static final String BEANS_XML = "beans.xml";
 
     public static void main(String[] args) {
-        logger.info("Hello!");
+        log.info("Hello!");
 
         //create a context first
         ConfigurableApplicationContext context = new AnnotationConfigApplicationContext(GameConfig.class);
