@@ -1,0 +1,3 @@
+com\madas\config\WebConfig.class
+com\madas\controller\DemoController.class
+com\madas\config\WellAppInitializer.class
