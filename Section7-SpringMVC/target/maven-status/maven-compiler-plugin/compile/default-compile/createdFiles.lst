@@ -1,3 +1,13 @@
-com\madas\config\WebConfig.class
+com\madas\service\TodoItemServiceImpl.class
+com\madas\service\TodoItemService.class
+com\madas\service\DemoService.class
+com\madas\config\WebAppInitializer.class
 com\madas\controller\DemoController.class
-com\madas\config\WellAppInitializer.class
+com\madas\service\DemoServiceImpl.class
+com\madas\utils\Views.class
+com\madas\model\TodoItem.class
+com\madas\controller\TodoItemController.class
+com\madas\config\WebConfig.class
+com\madas\utils\AttributeNames.class
+com\madas\model\TodoData.class
+com\madas\utils\Mappings.class

@@ -1,17 +1,22 @@
 package com.madas.config;
 
+import com.madas.service.DemoService;
+import com.madas.service.DemoServiceImpl;
+import com.madas.utils.Views;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.UrlBasedViewResolver;
 
 @EnableWebMvc
 @Configuration
 @ComponentScan(basePackages = "com.madas")
-public class WebConfig {
+public class WebConfig implements WebMvcConfigurer {
 
     // == constants ==
     public static final String RESOLVER_PREFIX = "/WEB-INF/view/";
@@ -25,4 +30,14 @@ public class WebConfig {
         viewResolver.setSuffix(RESOLVER_SUFFIX);
         return viewResolver;
     }
+
+    @Override
+    public void addViewControllers(ViewControllerRegistry registry) {
+        registry.addViewController("/").setViewName(Views.HOME);
+    }
+
+    /*@Bean
+    public DemoService service() {
+        return new DemoServiceImpl();
+    }*/
 }

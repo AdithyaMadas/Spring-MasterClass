@@ -3,6 +3,8 @@
     <title>Welcome</title>
 </head>
 <body>
-<h1>Hello World</h1>
+    <h1>${Message}</h1>
+    <h2>${h2}</h2>
+    <h2>${age}</h2>
 </body>
 </html>
